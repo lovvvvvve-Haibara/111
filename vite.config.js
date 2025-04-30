@@ -22,11 +22,24 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
-  base: '/111/',
+  base: "/111/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // 可根据项目需求添加分块规则
+          'vue': ['vue'],
+          'element-plus': ['element-plus']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 2000
+  }
 })
+
 
