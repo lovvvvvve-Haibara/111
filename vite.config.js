@@ -22,7 +22,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
-  base: "/111/",
+  publicPath:'/111/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
